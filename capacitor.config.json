@@ -1,0 +1,6 @@
+{
+	"appId": "local.photosgram.app",
+	"appName": "Phtosgram",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

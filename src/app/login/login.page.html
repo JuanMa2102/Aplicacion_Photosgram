@@ -1,0 +1,28 @@
+<ion-content [fullscreen]="true">
+  
+  <ion-card class="card-login">
+    <ion-card-header>
+      <ion-card-title>
+        Iniciar Sesión
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <ion-item class="mb-4">
+          <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+          <ion-input placeholder="Usuario" formControlName="username" ></ion-input>
+        </ion-item>
+
+        <ion-item class="mb-4">
+          <ion-icon name="key-outline" slot="start"></ion-icon>
+          <ion-input placeholder="Contraseña" formControlName="password"></ion-input>
+        </ion-item>
+
+        <ion-button type="submit" expand="block" [disabled]="!loginForm.valid"> Entrar </ion-button>
+      </form>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

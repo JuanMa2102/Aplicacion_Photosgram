@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+
+    </ion-buttons>
+    <ion-title>details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card mode="ios">
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Jw7evyr0qBOmok9NLhWxI879aIPtmHvIjA&usqp=CAU">
+      </ion-avatar>
+      <ion-label>
+        {{photo.username}}
+      </ion-label>
+    </ion-item>
+  
+      <ion-img src="http://localhost:8000/{{photo.image}}"></ion-img>
+      <ion-card-header>
+        
+        <ion-card-title>{{photo.description}}</ion-card-title>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label class="ion-text-wrap">
+              <ion-text color="secondary">
+                <h3>{{photo.username}}</h3>
+              </ion-text>
+              <p>{{photo.created_at}}</p>
+              <ion-text color="secondary">
+                <p></p>
+              </ion-text>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+     
+    </ion-card>
+</ion-content>

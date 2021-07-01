@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+      <ion-buttons slot="start">
+        
+        <ion-button fill="clear" [routerLink]="['/tabs/tab2']">
+          <ion-icon name="camera-outline"></ion-icon>
+        </ion-button>
+
+      </ion-buttons>
+      <ion-title>Photosgram</ion-title>
+      <ion-buttons slot="end">
+        <ion-button fill="clear">
+          <ion-icon name="paper-plane-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-virtual-scroll [items]="photos" approxItemHeight="360px">
+    <ion-card mode="ios" *virtualItem="let photo" button (click)="openDetail(photo)">
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Jw7evyr0qBOmok9NLhWxI879aIPtmHvIjA&usqp=CAU">
+        </ion-avatar>
+        <ion-label>
+          {{photo.username}}
+        </ion-label>
+      </ion-item>
+      
+        <ion-img src="http://localhost:8000/{{photo.image}} "></ion-img>
+        <ion-card-header>
+          <ion-card-subtitle>{{photo.description}}</ion-card-subtitle>
+          <p></p>
+          <ion-label>{{photo.created_at}}</ion-label>
+        </ion-card-header>
+      
+      </ion-card>
+
+  </ion-virtual-scroll> 
+
+</ion-content>

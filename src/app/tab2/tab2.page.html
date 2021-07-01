@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+      <ion-buttons slot="start">
+        
+        <ion-button fill="clear" [routerLink]="['/tabs/tab1']">
+          <ion-icon name="home-outline"></ion-icon>
+        </ion-button>
+
+      </ion-buttons>
+      <ion-title>Photosgram</ion-title>
+      <ion-buttons slot="end">
+        <ion-button fill="clear">
+          <ion-icon name="paper-plane-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-card mode="ios">
+    <form [formGroup]="postForm" (ngSubmit)="subirArchivo()">
+    <ion-item>
+      <ion-button size="default" fill="outline" color="secondary" (click)="fileUpload.click()"><ion-icon name="images-outline"></ion-icon></ion-button>
+      <ion-label class="ml-4">
+        Nueva publicacion
+      </ion-label>
+    </ion-item>
+      <input type="file" class="file-input" (change)="capturarFile($event)" #fileUpload>
+      <ion-item *ngIf="previsualizacion">
+      <ion-img [src]="previsualizacion"></ion-img>
+     </ion-item>
+      <ion-card-header>
+      <ion-card-title>
+        <ion-item *ngIf="previsualizacion">
+          <ion-icon name="key-outline" slot="start"></ion-icon>
+          <ion-label position="floating">Description</ion-label>
+          <ion-textarea formControlName="description" ></ion-textarea>
+        </ion-item>
+      </ion-card-title>
+      </ion-card-header>
+
+      <ion-button type="submit" expand="block" [disabled]="!postForm.valid"> Crear publicacion </ion-button>
+    </form>
+    </ion-card>
+
+</ion-content>
